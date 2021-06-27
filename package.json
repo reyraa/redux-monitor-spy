@@ -1,0 +1,23 @@
+{
+  "name": "redux-monitor-spy",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "The node module to send the state changes to the Safari extension (@reduxMonitor/safariExtension)",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "jest",
+    "build": "node config/build.js",
+    "build:prod": "node config/build.prod.js",
+    "build:dev": "node config/build.dev.js -w"
+  },
+  "keywords": ["redux", "devtool", "monitor", "middleware"],
+  "author": "reyraa <haghighatkhah.ali@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.12.1"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "typescript": "^4.2.4"
+  }
+}
