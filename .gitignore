@@ -5,7 +5,8 @@
 # outputs
 #
 coverage/
-**/public/
+public/
+dist/
 bundle.js
 bundle.js.map
 bundle.css
