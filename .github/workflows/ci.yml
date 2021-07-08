@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  install:
+  build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -24,12 +24,6 @@ jobs:
       # Installs npm dependecies to prepare for the next jobs
       - name: Install dependencies
         run: npm ci
-  # Runs different test types
-  test:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    steps:
 
       # Runs installed linter to ensure sytax quality
       - name: Run linter
