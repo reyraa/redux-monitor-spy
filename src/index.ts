@@ -16,10 +16,13 @@ const post = (data: Data) => {
 const extensionMiddleware = (store: any) => (next: any) => (action: Action) => {
   next(action);
 
-  post({
-    action,
-    state: store.getState(),
-  });
+  // Post only if the extension is installed
+  if (window['safari' as any]) {
+    post({
+      action,
+      state: store.getState(),
+    });
+  }
 };
 
 export default extensionMiddleware;
