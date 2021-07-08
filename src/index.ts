@@ -3,9 +3,14 @@ type Action = {
   [extraProps: string]: any
 }
 
+type Meta = {
+  date: Date,
+}
+
 type Data = {
   action: Action,
   state: any,
+  meta: Meta,
 }
 
 const post = (data: Data) => {
@@ -13,13 +18,19 @@ const post = (data: Data) => {
   document.dispatchEvent(event);
 };
 
-const extensionMiddleware = (store: any) => (next: any) => (action: Action) => {
+const extensionMiddleware = (store: any) => (next: any) => (action: Action): void => {
   next(action);
 
-  post({
-    action,
-    state: store.getState(),
-  });
+  // Post only if the extension is installed
+  if (window['safari' as any]) {
+    post({
+      action,
+      state: store.getState(),
+      meta: {
+        date: new Date(),
+      },
+    });
+  }
 };
 
 export default extensionMiddleware;
