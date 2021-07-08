@@ -7,7 +7,8 @@
   "scripts": {
     "test": "jest",
     "build": "npx tsc",
-    "dev": "npx tsc -w"
+    "dev": "npx tsc -w",
+    "lint": "eslint . --ext .ts"
   },
   "keywords": [
     "redux",
@@ -20,5 +21,10 @@
   "dependencies": {
     "prop-types": "^15.7.2",
     "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
+    "eslint": "^7.30.0"
   }
 }
