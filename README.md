@@ -6,7 +6,7 @@ Redux Monitor Spy is a middleware which communicates the Redux actions with Redu
 
 ## Installation
 This application has two parts:
-- The Safari extension which you can find on the App Store. 
+- The Safari extension which you can find on the [App Store](https://apps.apple.com/us/app/redux-monitor/id1575132553). 
 - The spy, current repository, which you can install as a yarn/npm dependency. 
 
 
