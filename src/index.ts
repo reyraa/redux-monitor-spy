@@ -4,13 +4,17 @@ type Action = {
 }
 
 type Meta = {
-  date: Date,
+  timestamp: number,
+}
+
+type Frame = {
+  data: Action,
+  meta: Meta,
 }
 
 type Data = {
-  action: Action,
+  frame: Frame,
   state: any,
-  meta: Meta,
 }
 
 const post = (data: Data) => {
@@ -24,11 +28,13 @@ const extensionMiddleware = (store: any) => (next: any) => (action: Action): voi
   // Post only if the extension is installed
   if (window['safari' as any]) {
     post({
-      action,
-      state: store.getState(),
-      meta: {
-        date: new Date(),
+      frame: {
+        data: action,
+        meta: {
+          timestamp: (new Date()).getTime(),
+        },
       },
+      state: store.getState(),
     });
   }
 };
