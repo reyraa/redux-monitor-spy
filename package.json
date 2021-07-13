@@ -1,6 +1,6 @@
 {
   "name": "redux-monitor-spy",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "description": "The node module to send the state changes to the Safari extension (redux-monitor)",
   "main": "dist/index.js",
